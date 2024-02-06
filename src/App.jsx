@@ -55,7 +55,7 @@ function App() {
           </div> 
         </div>
         <div className="col-span-5">
-          <div className="p-12 bg-gray-100 h-full">
+          <div className="py-5 px-12 bg-gray-100 h-full">
             <div className="mb-8">
               <h1 className="text-2xl font-bold">Job Board</h1>
             </div>
@@ -81,20 +81,46 @@ function App() {
                 </div>
               </form>
             </div>
-            <div>
-            <div className="flex flex-row items-center bg-white rounded-2xl py-3 px-4 drop-shadow-lg">
-              <div className="w-[10%]">
-                <RiArrowDropRightLine className="text-5xl bg-gray-100 rounded-xl"/>
+            <div className="flex flex-col gap-2">
+              <div className="flex flex-row items-center bg-white rounded-2xl py-2 px-3 drop-shadow-lg border-2 border-transparent hover:border-purple-200">
+                <div className="w-[10%]">
+                  <RiArrowDropRightLine className="text-5xl bg-gray-100 rounded-xl"/>
+                </div>
+                <div className="w-[90%]">
+                  <ul className="flex gap-8">
+                    <li>Customer</li>
+                    <li>Cellphone</li>
+                    <li>Rut</li>
+                    <li>Product</li>
+                  </ul>
+                </div>
               </div>
-              <div className="w-[90%]">
-                <ul className="flex gap-8">
-                  <li>Customer</li>
-                  <li>Cellphone</li>
-                  <li>Rut</li>
-                  <li>Product</li>
-                </ul>
+              <div className="flex flex-row items-center bg-white rounded-2xl py-2 px-3 drop-shadow-lg border-2 border-transparent hover:border-purple-200">
+                <div className="w-[10%]">
+                  <RiArrowDropRightLine className="text-5xl bg-gray-100 rounded-xl"/>
+                </div>
+                <div className="w-[90%]">
+                  <ul className="flex gap-8">
+                    <li>Customer</li>
+                    <li>Cellphone</li>
+                    <li>Rut</li>
+                    <li>Product</li>
+                  </ul>
+                </div>
               </div>
-            </div>
+              <div className="flex flex-row items-center bg-white rounded-2xl py-2 px-3 drop-shadow-lg border-2 border-transparent hover:border-purple-200">
+                <div className="w-[10%]">
+                  <RiArrowDropRightLine className="text-5xl bg-gray-100 rounded-xl"/>
+                </div>
+                <div className="w-[90%]">
+                  <ul className="flex gap-8">
+                    <li>Customer</li>
+                    <li>Cellphone</li>
+                    <li>Rut</li>
+                    <li>Product</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
