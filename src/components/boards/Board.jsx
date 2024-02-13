@@ -41,6 +41,7 @@ function Board() {
               <BoardItem Customer={"customer"} Cellphone={"9 1234 5678"} Rut={"12.345.678-9"} Product={"Product X"}/>
               <BoardItem Customer={"customer"} Cellphone={"9 1234 5678"} Rut={"12.345.678-9"} Product={"Product X"}/>
               <BoardItem Customer={"customer"} Cellphone={"9 1234 5678"} Rut={"12.345.678-9"} Product={"Product X"}/>
+              
             </div>
           </div>
         </div>
