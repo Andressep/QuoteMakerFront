@@ -36,7 +36,6 @@ function Sidebar() {
           </ul>
         </nav>
         <div className="flex flex-col gap-4">
-          <img src="undraw_icon2.svg" alt="Image" />
           <a href="/logout" className="flex items-center gap-2 hover:bg-purple-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
             <RiLogoutBoxLine />
             Logout
