@@ -10,25 +10,25 @@ function Sidebar() {
         <nav>
           <ul>
             <li>
-              <a href="#" className="flex items-center gap-2 hover:bg-purple-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
+              <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
                 <RiDashboardLine />
                 Dashboard
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center gap-2 hover:bg-purple-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
+              <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
                 <RiBriefcaseLine />
                 Jobs Board
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center gap-2 hover:bg-purple-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
+              <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
                 <RiCalendar2Line />
                 Schedule
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center gap-2 hover:bg-purple-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
+              <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
                 <RiMessage2Line />
                 Messages
               </a>
@@ -36,7 +36,7 @@ function Sidebar() {
           </ul>
         </nav>
         <div className="flex flex-col gap-4">
-          <a href="/logout" className="flex items-center gap-2 hover:bg-purple-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
+          <a href="/logout" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
             <RiLogoutBoxLine />
             Logout
           </a>

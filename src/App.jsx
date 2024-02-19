@@ -1,5 +1,5 @@
 import Sidebar from "./components/sidebar/Sidebar";
-import Board2 from "./components/boards/Board2";
+import Board from "./components/boards/Board";
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
       <div className="min-h-screen grid grid-cols-6">
         <Sidebar/>
-        <Board2/>
+        <Board/>
       </div>
   )
 }

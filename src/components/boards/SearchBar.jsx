@@ -12,9 +12,8 @@ function SearchBar() {
       </form>
       <form className="col-span-1">
         <div className="relative">
-          <RiSearchLine className="absolute left-2 top-3 text-gray-500" />
-          <select className="bg-white py-2 pl-8 pr-4 outline-none w-full rounded-xl">
-            <option>Any</option>
+          <select className="bg-white text-gray-400 py-2 pl-2 pr-2 outline-none w-full text-left rounded-xl">
+            <option>Categories</option>
           </select>
         </div>
       </form>
