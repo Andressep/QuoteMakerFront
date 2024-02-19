@@ -1,4 +1,4 @@
-import { RiDashboardLine, RiBriefcaseLine, RiCalendar2Line, RiMessage2Line, RiLogoutBoxLine } from "react-icons/ri";
+import { RiDashboardLine, RiBriefcaseLine, RiAccountCircleLine, RiFileListLine, RiLogoutBoxLine } from "react-icons/ri";
 
 function Sidebar() {
   return (
@@ -11,26 +11,26 @@ function Sidebar() {
           <ul>
             <li>
               <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
-                <RiDashboardLine />
-                Dashboard
+                <RiDashboardLine className="w-6 h-6"/>
+                Quotes
               </a>
             </li>
             <li>
               <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
-                <RiBriefcaseLine />
-                Jobs Board
+                <RiBriefcaseLine className="w-6 h-6"/>
+                Products
               </a>
             </li>
             <li>
               <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
-                <RiCalendar2Line />
-                Schedule
+                <RiAccountCircleLine className="w-6 h-6"/>
+                Customers
               </a>
             </li>
             <li>
               <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
-                <RiMessage2Line />
-                Messages
+                <RiFileListLine className="w-6 h-6"/>
+                Dashboards
               </a>
             </li>
           </ul>

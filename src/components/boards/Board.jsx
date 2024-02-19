@@ -22,8 +22,11 @@ function Board() {
   return (
     <div className="col-span-5">
         <div className="py-5 px-12 bg-gray-100 h-full">
-            <div className="mb-8">
-              <h1 className="text-2xl font-bold">Job Board</h1>
+            <div className="mb-4 my-8">
+              <h1 className="text-2xl font-bold">Products Board</h1>
+            </div>
+            <div>
+
             </div>
             <SearchBar/>
             <div className="overflow-hidden shadow-md rounded-lg">
