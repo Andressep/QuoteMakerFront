@@ -1,5 +1,5 @@
 import React from 'react';
-import { RiSearchLine, RiFilter3Line } from 'react-icons/ri';
+import { RiSearchLine } from 'react-icons/ri';
 
 function SearchBar() {
   return (
@@ -19,7 +19,7 @@ function SearchBar() {
       </form>
       <div className="col-span-1 flex justify-end">
         <button className="bg-white  text-gray-500 py-2 px-4 rounded-xl font-semibold hover:bg-gray-50 overflow-hidden shadow-md">
-          New Product
+          <a href="#">New Product</a>
         </button>
       </div>
     </div>

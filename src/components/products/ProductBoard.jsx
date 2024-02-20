@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-import Pagination from './Pagination';
+import SearchBar from '../boards/SearchBar';
+import Pagination from '../boards/Pagination';
 
-function Board() {
+function ProductBoard() {
   // Datos de ejemplo para llenar la tabla
   const data = [
     { id: 1, name: 'Producto 1', category: 'Electrónica', price: '$100' },
@@ -59,4 +59,4 @@ function Board() {
   );
 }
 
-export default Board;
+export default ProductBoard;
