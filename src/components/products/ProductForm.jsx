@@ -27,39 +27,49 @@ function ProductForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 bg-white p-4 rounded-lg shadow-md">
-      <div>
-        <label htmlFor="code" className="block text-sm font-medium text-gray-700">Code</label>
-        <input type="text" name="code" id="code" value={product.code} onChange={handleChange} className="mt-1 block w-full border-gray-300 shadow-sm rounded-md" />
-      </div>
-      <div>
-        <label htmlFor="description" className="block text-sm font-medium text-gray-700">Description</label>
-        <input type="text" name="description" id="description" value={product.description} onChange={handleChange} className="mt-1 block w-full border-gray-300 shadow-sm rounded-md" />
-      </div>
-      <div>
-        <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">Quantity</label>
-        <input type="number" name="quantity" id="quantity" value={product.quantity} onChange={handleChange} className="mt-1 block w-full border-gray-300 shadow-sm rounded-md" />
-      </div>
-      <div>
-        <label htmlFor="category" className="block text-sm font-medium text-gray-700">Category</label>
-        <input type="text" name="category" id="category" value={product.category} onChange={handleChange} className="mt-1 block w-full border-gray-300 shadow-sm rounded-md" />
-      </div>
-      <div>
-        <label htmlFor="price" className="block text-sm font-medium text-gray-700">Price</label>
-        <input type="number" name="price" id="price" value={product.price} onChange={handleChange} className="mt-1 block w-full border-gray-300 shadow-sm rounded-md" />
-      </div>
-      <div>
-        <label htmlFor="weight" className="block text-sm font-medium text-gray-700">Weight</label>
-        <input type="number" name="weight" id="weight" value={product.weight} onChange={handleChange} className="mt-1 block w-full border-gray-300 shadow-sm rounded-md" />
-      </div>
-      <div>
-        <label htmlFor="length" className="block text-sm font-medium text-gray-700">Length</label>
-        <input type="number" name="length" id="length" value={product.length} onChange={handleChange} className="mt-1 block w-full border-gray-300 shadow-sm rounded-md" />
-      </div>
-      <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
-        Create Product
-      </button>
-    </form>
+    <div className="col-span-5">
+        <div className="flex flex-col items-center py-5 px-12 bg-gray-100 h-full">
+          <div className='w-1/2 mt-5'>
+            <div className="mb-4 mt-8">
+              <h1 className="text-2xl font-bold">Create New Product</h1>
+            </div>
+            <div className='flex flex-col'>
+              <form onSubmit={handleSubmit} className="w-10/12 justify-start  space-y-4 bg-white p-4 rounded-lg shadow-md pb-16">
+                <div className="relative z-0 w-full mb-5 group">
+                    <input type="text" name="floating_code" id="floating_code" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-400 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_code" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Code</label>
+                </div>
+                <div className="relative z-0 w-full mb-5 group">
+                    <input type="text" name="floating_description" id="floating_description" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-400 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_description" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
+                </div>
+                <div className="relative z-0 w-full mb-5 group">
+                    <input type="test" name="price_product" id="price_product" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-400 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="price_product" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Price $</label>
+                </div>
+                <div className="relative z-0 w-full mb-5 group">
+                      <input type="text" name="weight_product" id="weight_product" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-400 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="weight_product" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Weight</label>
+                </div>
+                <div className="relative z-0 w-full mb-5 group">
+                  <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-400 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                  <label for="floating_phone" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Length</label>                    
+                </div>
+                <div className="relative z-0 w-full mb-5 group">
+                  <input type="text" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-400 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                  <label for="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Category</label>
+                </div>
+              </form>
+              <div className='w-full flex justify-end pr-24'>
+                <button type="submit" className="bg-white  text-gray-500 py-2 my-5 px-4 rounded-xl font-semibold hover:bg-gray-50 overflow-hidden shadow-md">
+                  Create Product
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
   );
 }
 

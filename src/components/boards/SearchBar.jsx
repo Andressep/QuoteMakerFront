@@ -1,7 +1,15 @@
 import React from 'react';
 import { RiSearchLine } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 function SearchBar() {
+  const navigate = useNavigate(); // Inicializa useNavigate
+
+  // Función para manejar el clic en el botón
+  const handleNewProductClick = () => {
+    navigate('/product'); // Navega a la ruta '/product'
+  };
+
   return (
     <div className="grid grid-cols-4 gap-4 items-center py-4">
       <form className="col-span-2 ">
@@ -18,8 +26,8 @@ function SearchBar() {
         </div>
       </form>
       <div className="col-span-1 flex justify-end">
-        <button className="bg-white  text-gray-500 py-2 px-4 rounded-xl font-semibold hover:bg-gray-50 overflow-hidden shadow-md">
-          <a href="#">New Product</a>
+        <button onClick={handleNewProductClick} className="bg-white text-gray-500 py-2 px-4 rounded-xl font-semibold hover:bg-gray-50 overflow-hidden shadow-md">
+          New Product
         </button>
       </div>
     </div>

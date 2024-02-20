@@ -1,6 +1,10 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { RiDashboardLine, RiBriefcaseLine, RiAccountCircleLine, RiFileListLine, RiLogoutBoxLine } from "react-icons/ri";
 
 function Sidebar() {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full h-full col-span-1 border-r">
       <div className="text-center p-8">
@@ -16,10 +20,11 @@ function Sidebar() {
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
+              {/* Utiliza onClick en lugar de href para navegar */}
+              <button onClick={() => navigate('/')} className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold w-full text-left">
                 <RiBriefcaseLine className="w-6 h-6"/>
                 Products
-              </a>
+              </button>
             </li>
             <li>
               <a href="#" className="flex items-center gap-2 hover:bg-gray-600 p-4 text-gray-500 hover:text-white rounded-lg transition-colors font-semibold">
