@@ -1,60 +1,82 @@
-import React from 'react';
-import SearchBar from '../boards/SearchBar';
-import Pagination from '../boards/Pagination';
+import React, { useEffect, useState } from 'react';
+import SearchBar from '../boards/SearchBar'; // Asegúrate de que la ruta es correcta
+import Pagination from '../boards/Pagination'; // Asegúrate de que la ruta es correcta
+import axios from 'axios';
 
 function ProductBoard() {
-  // Datos de ejemplo para llenar la tabla
-  const data = [
-    { id: 1, name: 'Producto 1', category: 'Electrónica', price: '$100' },
-    { id: 2, name: 'Producto 2', category: 'Librería', price: '$200' },
-    { id: 3, name: 'Producto 3', category: 'Hogar', price: '$300' },
-    { id: 4, name: 'Producto 4', category: 'Jardinería', price: '$400' },
-    { id: 5, name: 'Producto 5', category: 'Electrónica', price: '$500' },
-    { id: 6, name: 'Producto 6', category: 'Moda', price: '$600' },
-    { id: 7, name: 'Producto 7', category: 'Hogar', price: '$700' },
-    { id: 8, name: 'Producto 8', category: 'Jardinería', price: '$800' },
-    { id: 9, name: 'Producto 9', category: 'Librería', price: '$900' },
-    { id: 10, name: 'Producto 10', category: 'Electrónica', price: '$1000' },
-  ];
-  
-  
+  const [products, setProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const limit = 10;
+      const offset = (currentPage - 1) * limit;
+      try {
+        const response = await axios.get(`http://localhost:8080/products`, { 
+          params: { name: searchTerm, limit: limit, offset: offset }
+        });
+        setProducts(response.data.products); // Asume que los productos vienen en 'data.products'
+        setTotalPages(Math.ceil(response.data.total / limit)); // Asume que el total de productos viene en 'data.total'
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, [currentPage, searchTerm]);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
+  const handleSearch = (newSearchTerm) => {
+    setSearchTerm(newSearchTerm);
+    setCurrentPage(1); // Regresa a la primera página para una nueva búsqueda
+  };
 
   return (
     <div className="col-span-5">
-        <div className="py-5 px-12 bg-gray-100 h-full">
-            <div className="mb-4 my-8">
-              <h1 className="text-2xl font-bold">Products Board</h1>
-            </div>
-            <div>
-
-            </div>
-            <SearchBar/>
-            <div className="overflow-hidden shadow-md rounded-lg">
-                <table className="w-full text-sm text-left text-gray-500">
-                    <thead className="text-xs text-gray-700 uppercase bg-white border-b">
-                        <tr>
-                            <th className="px-6 py-3">ID</th>
-                            <th className="px-6 py-3">Nombre</th>
-                            <th className="px-6 py-3">Categoría</th>
-                            <th className="px-6 py-3">Precio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((item) => (
-                        <tr className="bg-white border-b hover:bg-gray-50 " key={item.id}>
-                            <td className="px-6 py-3" >{item.id}</td>
-                            <td className="px-6 py-3" >{item.name}</td>
-                            <td className="px-6 py-3" >{item.category}</td>
-                            <td className="px-6 py-3" >{item.price}</td>
-                        </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-            <div className="flex justify-center mt-10 mb-8">
-                <Pagination />
-            </div>
+      <div className="py-5 px-12 bg-gray-100 h-full">
+      <div className="mb-4 my-6">
+        <h1 className="text-2xl font-bold">Products Board</h1>
         </div>
+        <SearchBar onSearch={handleSearch} />
+        <div className="overflow-hidden shadow-md rounded-lg mt-4">
+          <table className="w-full text-sm text-left text-gray-500">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+              <tr>
+                <th className="px-6 py-3">ID</th>
+                <th className="px-6 py-3">Code</th>
+                <th className="px-6 py-3">Name</th>
+                <th className="px-6 py-3">Category</th>
+                <th className="px-6 py-3">Price</th>
+                <th className="px-6 py-3">Length</th>
+                <th className="px-6 py-3">Weight</th>
+                <th className="px-6 py-3">Available</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product) => (
+                <tr key={product.id} className="bg-white border-b hover:bg-gray-50">
+                  <td className="px-6 py-3">{product.id}</td>
+                  <td className="px-6 py-3">{product.code}</td>
+                  <td className="px-6 py-3">{product.name}</td>
+                  <td className="px-6 py-3">{product.categoryID}</td> 
+                  <td className="px-6 py-3">${product.price.toFixed(2)}</td> 
+                  <td className="px-6 py-3">{product.length}</td>
+                  <td className="px-6 py-3">{product.weight}</td>
+                  <td className="px-6 py-3">{product.isAvailable ? 'No' : 'Yes'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div >
+        <div className="flex justify-center mt-10 mb-8 ">
+            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+        </div>
+      </div>
     </div>
   );
 }
